@@ -1,4 +1,4 @@
-import { StrictMode } from 'react'
+import { StrictMode, createElement } from 'react' // Note new changes in react not in video
 import { createRoot } from 'react-dom/client'
 
 import App from './App.jsx'
@@ -21,16 +21,20 @@ function MyApp(){
 // }
 
 const anotherElement = (
-  <a href = "www.google.com" target = '_blank' >Visit Google</a>
+  <a href="https://www.google.com" target="_blank">Visit Google</a>
 )
 
-const reactElement = React.createElement(
+const anotherVar = "Knight";
+ 
+const reactElement = createElement(
   'a',
-  {href : 'https://www.google.com'}
+  {href : 'https://www.google.com' ,target: '_blank'},
+  'click me to visit google' ,
+   anotherVar
+
 )
 
 createRoot(document.getElementById('root')).render(
-  
-    anotherElement
- 
+    reactElement
+
 )
