@@ -1,0 +1,26 @@
+[
+{
+"_id ": 1,
+"title" : "Acer Nitro 5 AN515-57-79TD Gaming Laptop",
+"description" : "Acer Nitro 5 AN515-57-79TD Gaming Laptop | Intel Core i7-11800H | NVIDIA GeForce RTX 3050 Ti Laptop GPU | 15.6 FHD 144Hz IPS Display | 8GB DDR4 | 512GB NVMe SSD | Killer Wi-Fi 6 | Backlit Keyboard",
+"oldPrice " : 1000.99,
+"price " : 739.99,
+"isNew " : true,
+"category" : "Electronics",
+"ratings" : 4.5,
+"image" : "https://i.ibb.co/jTMbP5r/nextamazon1.jpg",
+"brand " : "Acer"
+} ,
+{
+"_id": 2,
+"title" : "2020 Apple iPad Pro",
+"description" : "2020 Apple iPad Pro (12.9-inch, Wi-Fi, 256GB) - Space Gray (Renewed)",
+"oldPrice" : 850.99,
+"price" : 747.07,
+"isNew" : true,
+"category" : "Electronics",
+"ratings" : 4.8,
+"image" : "https://i.ibb.co/SybqWjf/nextamazon3.jpg",
+"brand " : "Apple"
+}
+]
