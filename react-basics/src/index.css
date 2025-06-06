@@ -1,1 +1,19 @@
 @import "tailwindcss";
+
+
+.boss-div {
+        height : 50vh;
+        width : 50vh;
+        background-color: aqua;
+}
+
+.manager-div{
+    height:  30vh;
+    width: 30vh;
+    background-color: burlywood;
+
+}
+
+.employee-div{
+    background-color: aquamarine;
+}
