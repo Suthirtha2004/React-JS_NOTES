@@ -3,6 +3,7 @@ import Events from "../src/Components/EventHandling"
 import { Event_props } from './Components/EventProps'
 import { EventPropagate } from './Components/EventPropagation'
 import { State } from './Components/Hooks/State'
+import { Derived_State } from './Components/Array'
 // import {Gadgets}  from '../src/Components/Technical'
 // import Create_new_Component from './Components/NewComponents' //Normal Expot and Import
 //import Header,{ Create_new_Component, Footer} from './Components/NewComponents'
@@ -24,6 +25,8 @@ function App() {
     <Footer></Footer> */}
 
     < State/>
+    <Silbling_component />
+    <Derived_State />
     </>
    
   )
@@ -34,3 +37,9 @@ function App() {
 export default App
 
  
+const Silbling_component = () =>{
+  console.log("Rendering Sibling Component");
+  return (
+    <h1>Hello this is Sibling</h1>
+  )
+}

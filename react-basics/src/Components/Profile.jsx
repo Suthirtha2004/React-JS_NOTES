@@ -1,8 +1,9 @@
+//Basically the ProfileCard is a function or component which takes paramters or properties to execute and thus display
+
 const Profile_card = () =>{
     return (
      <div>
         <h1>Profile Card Making Challenge</h1>
-     
         <ProfileCard 
             name="Archer"
             Age={15}
