@@ -9,6 +9,7 @@ import { Lifting_State } from './Components/Liftingstateup'
 import ToggleSwitch from './Projects/ToggleSwitch'
 
 import { Short_circuit } from './Components/ShortCircuit'
+import Counter from './Components/Hooks/The UseState/Challenge'
 // import {Gadgets}  from '../src/Components/Technical'
 // import Create_new_Component from './Components/NewComponents' //Normal Expot and Import
 //import Header,{ Create_new_Component, Footer} from './Components/NewComponents'
@@ -36,7 +37,9 @@ function App() {
 
     {/* <ToggleSwitch /> */}
     
-    <Short_circuit />
+    {/* <Short_circuit /> */}
+
+    <Counter />
     
     </>
     
