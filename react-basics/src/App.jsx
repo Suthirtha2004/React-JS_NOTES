@@ -7,6 +7,8 @@ import { Derived_State } from './Components/Array'
 import { Lifting_State } from './Components/Liftingstateup'
 
 import ToggleSwitch from './Projects/ToggleSwitch'
+
+import { Short_circuit } from './Components/ShortCircuit'
 // import {Gadgets}  from '../src/Components/Technical'
 // import Create_new_Component from './Components/NewComponents' //Normal Expot and Import
 //import Header,{ Create_new_Component, Footer} from './Components/NewComponents'
@@ -32,8 +34,9 @@ function App() {
     <Derived_State />*/}
     {/* <Lifting_State />  */}
 
-    <ToggleSwitch />
+    {/* <ToggleSwitch /> */}
     
+    <Short_circuit />
     
     </>
     
