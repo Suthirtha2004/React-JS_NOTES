@@ -23,9 +23,9 @@ const Counter = () => {
   return (
     <div className="counter-container">
       <div className="buttons">
-        <button onClick={handleIncrement} disabled={count >= 100}>Increment</button>
-        <button onClick={handleDecrement} disabled ={count <= 0}>Decrement</button>
-        <button onClick={handleReset}>Reset</button>
+        <button className='click-button' onClick={handleIncrement} disabled={count >= 100}>Increment</button>
+        <button className='click-button' onClick={handleDecrement} disabled ={count <= 0}>Decrement</button>
+        <button className='click-button' onClick={handleReset}>Reset</button>
       </div>
 
       <div className="fields">

@@ -18,10 +18,10 @@
   gap: 10px;
 }
 
-button {
+.click-button {
   padding: 10px;
   font-size: 16px;
-  background: #4caf50;
+  background: #4c84af;
   border: none;
   border-radius: 8px;
   color: white;
@@ -29,7 +29,7 @@ button {
   transition: background 0.2s;
 }
 
-button:hover {
+.click-button:hover {
   background: #45a049;
 }
 

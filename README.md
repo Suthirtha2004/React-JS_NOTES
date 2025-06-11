@@ -20,3 +20,8 @@
     B. const Component name ...
             export default component name; -----> import Component name
   
+### Controlled vs Uncontrolled
+1. Controlled components in React are those where form data is handled by that component state
+2. When we change the values of the controlled states it becomes uncontrolled.
+3. Uncontrolled components in React where form data is handled by the data itself.
+4. For a value attribute given in form we definitely need a onChange event.

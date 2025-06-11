@@ -10,6 +10,10 @@ import ToggleSwitch from './Projects/ToggleSwitch'
 
 import { Short_circuit } from './Components/ShortCircuit'
 import Counter from './Components/Hooks/The UseState/Challenge'
+
+import { Controlled_Form } from './Components/Hooks/The UseState/UncontrolledvsControlled'
+
+import { Reg_For } from './Components/Hooks/The UseState/RegistrationForm'
 // import {Gadgets}  from '../src/Components/Technical'
 // import Create_new_Component from './Components/NewComponents' //Normal Expot and Import
 //import Header,{ Create_new_Component, Footer} from './Components/NewComponents'
@@ -39,8 +43,11 @@ function App() {
     
     {/* <Short_circuit /> */}
 
-    <Counter />
-    
+    {/* <Counter />
+
+    < Controlled_Form />
+     */}
+     < Reg_For />
     </>
     
     
