@@ -20,6 +20,8 @@ import { RegistrationRight } from './Components/Hooks/The UseState/RegistrationR
 import { LoginForm } from './Components/Hooks/The UseState/LoginForm'
 
 import { Contact } from './Components/Hooks/The UseState/ContactForm'
+
+import { Example1 } from './Components/Hooks/The UseEffect/File1'
 // import {Gadgets}  from '../src/Components/Technical'
 // import Create_new_Component from './Components/NewComponents' //Normal Expot and Import
 //import Header,{ Create_new_Component, Footer} from './Components/NewComponents'
@@ -59,7 +61,9 @@ function App() {
 
      {/* <LoginForm /> */}
 
-     < Contact/>
+     {/* < Contact/> */}
+
+     < Example1/>
     </>
     
     
