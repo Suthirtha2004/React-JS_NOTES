@@ -3,6 +3,7 @@ import { TiTick } from "react-icons/ti";
 import { MdDelete } from "react-icons/md";
 import { useState } from "react";
 
+//todo list
 export const TodoApp = () => {
     const [inputVal, setInputVal] = useState("");
     const [list, setList] = useState([]);
