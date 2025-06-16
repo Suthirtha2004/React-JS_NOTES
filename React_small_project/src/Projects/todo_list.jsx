@@ -15,10 +15,14 @@ export const TodoApp = () => {
         setList((prev) => [...prev, inputVal]);
     };
 
-    const handleDelete = (value) => {
-        setList((prev) => prev.filter((item) => item !== value));
+    const handleDelete = (todo) => {
+        setList((prev) => prev.filter((item) => item.id !== todo.id));
     };
 
+    const handleChecked = (inputVal) =>{
+        const {id,content,checked}=inputVal;
+        const updatedInputVal = { ...inputVal, checked: true };
+    }
     return (
         <div className="todo-container">
             <h2 className="todo-title">
@@ -26,7 +30,7 @@ export const TodoApp = () => {
             </h2>
             <Todo_App onAddTodo={handleAddTodo} />
             <ul className="todo-list">
-                <Todo_items items={list} onDelete={handleDelete} />
+                <Todo_items items={list} onDelete={handleDelete} onChecked={handleChecked} />
             </ul>
             <button className="todo-button" onClick={handleClear}>Clear All</button>
         </div>

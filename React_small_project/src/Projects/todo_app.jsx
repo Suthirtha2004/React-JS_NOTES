@@ -1,38 +1,40 @@
 import './todo.css'
 import { useState } from 'react';
 
+export const Todo_App = ({ onAddTodo }) => {
+    const [inputVal, setInputVal] = useState({ id: "", content: "", checked: false });
 
-export const Todo_App = ({onAddTodo}) =>{
-     const [inputVal, setInputVal] = useState("");
-
-     const handleInput = (event) => {
-        setInputVal(event.target.value);
-
+    const handleInput = (event) => {
+        setInputVal({
+            id: event.target.value,
+            content: event.target.value,
+            checked: false
+        });
     };
 
-     const handleSubmit = (event) => {
+   
+    const handleSubmit = (event) => {
         event.preventDefault();
-        if (inputVal.trim() === "") return; // Prevent empty items
+        if (!inputVal.content.trim()) return; // Prevent empty items
         onAddTodo(inputVal);
-        setInputVal("");
+        setInputVal({ id: "", content: "", checked: false });
     };
-    return(
-        <>
+
+    return (
         <form onSubmit={handleSubmit}>
-                <section className="todo-input-section">
-                    <input
-                        type="text"
-                        name="inputVal"
-                        value={inputVal}
-                        onChange={handleInput}
-                        placeholder="Type here"
-                        className="todo-input"
-                    />
-                    <button className="todo-button" type="submit">
-                        Submit
-                    </button>
-                </section>
-            </form>
-        </>
-    )
+            <section className="todo-input-section">
+                <input
+                    type="text"
+                    name="inputVal"
+                    value={inputVal.content}
+                    onChange={handleInput}
+                    placeholder="Type here"
+                    className="todo-input"
+                />
+                <button className="todo-button" type="submit">
+                    Submit
+                </button>
+            </section>
+        </form>
+    );
 }
