@@ -26,7 +26,13 @@ import { Example1 } from './Components/Hooks/The UseEffect/File1'
 import { SpaceTech } from './Projects/SpaceTech'
 
 import { Ref_hook } from './Components/Hooks/The Use Effect/Reff'
+
+import { Home } from './Components/Hooks/Context API/home'
+
+import { Datacontext, DataProvider } from './Components/Hooks/Context API/contextindex'
+import { Parent_Component } from './Components/PropsDrilling'
 // import {Gadgets}  from '../src/Components/Technical'
+
 // import Create_new_Component from './Components/NewComponents' //Normal Expot and Import
 //import Header,{ Create_new_Component, Footer} from './Components/NewComponents'
 
@@ -71,8 +77,14 @@ function App() {
 
     {/* <SpaceTech /> */}
 
-    < Ref_hook />
+    {/* < Ref_hook /> */}
 
+
+    {/* <DataProvider>
+      <Home />
+    </DataProvider> */}
+
+    < Parent_Component />
 
     </>
     
