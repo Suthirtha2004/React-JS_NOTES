@@ -31,6 +31,8 @@ import { Home } from './Components/Hooks/Context API/home'
 
 import { Datacontext, DataProvider } from './Components/Hooks/Context API/contextindex'
 import { Parent_Component } from './Components/PropsDrilling'
+import { DarkLightTheme, ThemeProvider } from './Components/Hooks/Context API/darklight'
+import { Reduce_comp } from './Components/Hooks/The Use Reducer/Reducercomp'
 // import {Gadgets}  from '../src/Components/Technical'
 
 // import Create_new_Component from './Components/NewComponents' //Normal Expot and Import
@@ -84,7 +86,13 @@ function App() {
       <Home />
     </DataProvider> */}
 
-    < Parent_Component />
+    {/* < Parent_Component /> */}
+
+    {/* <ThemeProvider>
+      <DarkLightTheme />
+    </ThemeProvider> */}
+
+    <Reduce_comp />
 
     </>
     

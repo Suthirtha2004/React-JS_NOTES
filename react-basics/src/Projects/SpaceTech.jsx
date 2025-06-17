@@ -1,45 +1,45 @@
-import { useEffect, useState } from "react"
-import "./space.css"
-export const SpaceTech = () =>{
+import { useEffect, useState } from "react";
+import "./space.css";
 
-    const[apiData,setapiData] = useState("");
- 
-    const API  = "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&api_key=WtiR6AZV3vb48MDiPR3qshStNGtYlAcsGQqeM7Xf"
+export const SpaceTech = () => {
+    const [apiData, setApiData] = useState(null);
+    const [theme, setTheme] = useState("light");
 
-    useEffect(()=>{
+    const handleToggleTheme = () => {
+        setTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"));
+    };
+
+    const API =
+        "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&api_key=WtiR6AZV3vb48MDiPR3qshStNGtYlAcsGQqeM7Xf";
+
+    useEffect(() => {
         fetch(API)
-        .then((response)=>response.json())
-        .then((data)=>setapiData(data))
-        .catch((error)=>console.log("Error in fetching"));
+            .then((response) => response.json())
+            .then((data) => setApiData(data))
+            .catch((error) => {
+                console.log("Error in fetching", error);
+                setApiData({ photos: [] });
+            });
+    }, []);
 
-    },[])
-   
-    console.log(apiData);
-   
-
-    if(!apiData){
-        <h1>Loading....Please wait</h1>
+    if (!apiData) {
+        return <h1>Loading....Please wait</h1>;
     }
-        
-            return(
-        <>
-        <div>
-            <h1>THE SPACE HUB</h1>
-            {apiData.photos && apiData.photos.slice(0,5).map((item)=>{
-               return(
-                <ul key={item.id}>
-                <li >
-                    
-                    <img src = {item.img_src} width="20%" height="30%" />
-                    <h3>{item.camera.full_name}</h3>
 
+    return (
+        <div className={`space-container ${theme}`}>
+            <h1>THE SPACE HUB</h1>
+            {apiData.photos && apiData.photos.slice(0, 5).map((item) => (
+                <ul key={item.id}>
+                    <li>
+                        <img src={item.img_src} alt={item.camera.full_name} />
+                        <h3>{item.camera.full_name}</h3>
                     </li>
                 </ul>
-)})}
-               
-              <h2></h2>
-            
+            ))}
+            <button onClick={handleToggleTheme}>
+                {theme === "light" ? "Switch to Dark Mode" : "Switch to Light Mode"}
+            </button>
         </div>
-        </>
-    )
+    );
 };
