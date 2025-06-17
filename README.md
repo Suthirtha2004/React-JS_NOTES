@@ -98,3 +98,79 @@ This way, `[name]: value` dynamically updates the correct field in the state obj
 - Check your version with `npm list react` or by looking in `package.json`.
 
 ---
+
+## Context API
+
+The **Context API** allows you to share data (like themes, user info, etc.) across your component tree without passing props down manually at every level.
+
+**How to use:**
+1. **Create a context:**
+   ```js
+   import { createContext } from "react";
+   export const MyContext = createContext();
+   ```
+2. **Create a provider component:**
+   ```js
+   export const MyProvider = ({ children }) => {
+     const value = { /* your shared state */ };
+     return (
+       <MyContext.Provider value={value}>
+         {children}
+       </MyContext.Provider>
+     );
+   };
+   ```
+3. **Consume context in child components:**
+   ```js
+   import { useContext } from "react";
+   import { MyContext } from "./MyContextFile";
+   const { value } = useContext(MyContext);
+   ```
+
+**Best Practices:**
+- Use context for global data (theme, auth, language, etc.).
+- Avoid overusing context for frequently changing data (can cause unnecessary re-renders).
+- When props need to be passed to grand grand children component or many levels of components are there
+- Always try to wrap the children component within the provider section
+
+---
+
+## useReducer Hook
+
+The **useReducer** hook is an alternative to `useState` for managing complex state logic in React components.
+
+**Syntax:**
+```js
+const [state, dispatch] = useReducer(reducer, initialState);
+```
+
+- `reducer` is a function that takes `(state, action)` and returns a new state.
+- `dispatch` is a function to send actions to the reducer.
+
+**Example:**
+```js
+const reducer = (state, action) => {
+  switch (action.type) {
+    case "INCREMENT":
+      return state + 1;
+    case "DECREMENT":
+      return state - 1;
+    default:
+      return state;
+  }
+};
+
+const [count, dispatch] = useReducer(reducer, 0);
+```
+**Usage in JSX:**
+```jsx
+<button onClick={() => dispatch({ type: "INCREMENT" })}>Increment</button>
+<button onClick={() => dispatch({ type: "DECREMENT" })}>Decrement</button>
+```
+
+**When to use useReducer:**
+- When you have complex state logic that involves multiple sub-values.
+- When the next state depends on the previous one.
+- When you want to centralize state updates (like Redux, but local).
+
+---
