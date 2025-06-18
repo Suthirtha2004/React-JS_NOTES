@@ -174,3 +174,61 @@ const [count, dispatch] = useReducer(reducer, 0);
 - When you want to centralize state updates (like Redux, but local).
 
 ---
+
+## React.memo, useCallback, and useMemo
+
+### React.memo
+
+- `React.memo` is a higher-order component that memoizes a functional component.
+- It prevents unnecessary re-renders by only re-rendering the component if its props change.
+- Useful for optimizing performance, especially for components that receive the same props frequently.
+
+**Example:**
+```js
+import { memo } from "react";
+const MyButton = memo(({ onClick, children }) => (
+  <button onClick={onClick}>{children}</button>
+));
+```
+
+---
+
+### useCallback
+
+- `useCallback` is a React hook that returns a memoized version of a callback function.
+- It helps prevent unnecessary re-creations of functions on every render, which is useful when passing callbacks to memoized components.
+- The function is only recreated if one of its dependencies changes.
+
+**Example:**
+```js
+import { useCallback, useState } from "react";
+const [count, setCount] = useState(0);
+const increment = useCallback(() => setCount(c => c + 1), []);
+```
+
+---
+
+### useMemo
+
+- `useMemo` is a React hook that memoizes the result of a calculation.
+- It only recomputes the memoized value when one of its dependencies changes.
+- Useful for expensive calculations or derived data that you don’t want to recalculate on every render.
+
+**Example:**
+```js
+import { useMemo, useState } from "react";
+const [count, setCount] = useState(0);
+const expensiveValue = useMemo(() => {
+  // Some expensive computation
+  return count * 2;
+}, [count]);
+```
+
+---
+
+**When to use:**
+- Use `React.memo` for components that render the same output given the same props.
+- Use `useCallback` when passing functions to memoized components to avoid unnecessary renders.
+- Use `useMemo` to memoize expensive calculations or derived values.
+
+---

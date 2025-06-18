@@ -33,6 +33,8 @@ import { Datacontext, DataProvider } from './Components/Hooks/Context API/contex
 import { Parent_Component } from './Components/PropsDrilling'
 import { DarkLightTheme, ThemeProvider } from './Components/Hooks/Context API/darklight'
 import { Reduce_comp } from './Components/Hooks/The Use Reducer/Reducercomp'
+import { React_memo } from './Components/Hooks/The Use Memo and React Memo/React_memo'
+import { Use_call_back } from './Components/Hooks/The Use Memo and React Memo/Use_CallBack'
 // import {Gadgets}  from '../src/Components/Technical'
 
 // import Create_new_Component from './Components/NewComponents' //Normal Expot and Import
@@ -92,7 +94,11 @@ function App() {
       <DarkLightTheme />
     </ThemeProvider> */}
 
-    <Reduce_comp />
+    {/* <Reduce_comp /> */}
+
+    {/* <React_memo /> */}
+
+    <Use_call_back />
 
     </>
     
