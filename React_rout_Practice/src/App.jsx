@@ -1,4 +1,10 @@
-function App() {
+
+
+const App= () =>{
+
+  const router = createBrowserRouter([
+    
+  ])
   return (
     <div>
       
