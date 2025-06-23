@@ -1,13 +1,16 @@
 import { createBrowserRouter, createRoutesFromElements, RouterProvider,Route } from "react-router-dom";
 import { Home } from "./Pages/Home";
 import { About } from "./Pages/About";
+import { Skills } from "./Pages/Skills";
 import { AppLayout } from "./Components/Layout/AppLayout";
-
+import { ErrorPage } from "./Pages/ErrorPage";
+import { getApiData } from "./api/apiData";
 const App = () => {
   const router = createBrowserRouter([
     {
       path : "/",
       element : <AppLayout />,
+      errorElement : <ErrorPage/>,
       children : [
         {
           path : '/',
@@ -16,7 +19,12 @@ const App = () => {
         {
           path : "/about",
           element : <About/>
-        }
+        },
+        {
+          path : "/skills",
+          element : <Skills />,
+          loader : getApiData,
+        },
       ]
 
     }

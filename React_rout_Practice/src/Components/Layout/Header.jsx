@@ -1,22 +1,67 @@
-import { NavLink } from "react-router"
+import { NavLink } from "react-router-dom";
 
-export const Header =() =>{
-    return(
+export const Header = () => {
+
+  const getLinkStyleChange =({isActive})=>{
+    return{
+      color : isActive? "green" : "red" 
+    };
+  }
+  return (
     <>
       <nav>
         <div className="nav-content">
           <div className="logo">
-            <NavLink href="#">CodingLab.</NavLink>
+            <NavLink to="/" className="nav-link">CodingLab.</NavLink>
           </div>
           <ul className="nav-links">
-            <li><NavLink href="#">Home</NavLink></li>
-            <li><NavLink href="#">About</NavLink></li>
-            <li><NavLink href="#">Skills</NavLink></li>
-            <li><NavLink href="#">Services</NavLink></li>
-            <li><NavLink href="#">Contact</NavLink></li>
+            <li>
+              <NavLink
+                to="/"
+                className={({ isActive }) => (isActive ? "nav-link-active" : "nav-link")}
+              >
+                Home
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/about"
+                style={getLinkStyleChange}
+              >
+                About
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/skills"
+                style={({ isActive }) => {
+                  return {
+                    color: isActive ? "green" : "red"
+                  };
+                }}
+              >
+                Skills
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/services"
+                className={({ isActive }) => (isActive ? "nav-link-active" : "nav-link")}
+              >
+                Services
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/contact"
+                className={({ isActive }) => (isActive ? "nav-link-active" : "nav-link")}
+              >
+                Contact
+              </NavLink>
+            </li>
           </ul>
         </div>
       </nav>
     </>
-    ) 
-}
+  );
+};
