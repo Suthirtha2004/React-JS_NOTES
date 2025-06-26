@@ -5,6 +5,9 @@ import { Skills } from "./Pages/Skills";
 import { AppLayout } from "./Components/Layout/AppLayout";
 import { ErrorPage } from "./Pages/ErrorPage";
 import { getApiData } from "./api/apiData";
+import { SkillsDetails } from "./Components/Ui/SkillsDetails";
+import { getSkillsData } from "./api/skillsData";
+import { Contact, ContactDetails } from "./Pages/Contact";
 const App = () => {
   const router = createBrowserRouter([
     {
@@ -24,6 +27,17 @@ const App = () => {
           path : "/skills",
           element : <Skills />,
           loader : getApiData,
+        },
+        {
+          path : "/skills/:skillID",
+          element : <SkillsDetails/>,
+          loader : getSkillsData,
+        },
+        {
+          path : "/contact",
+          element : <Contact/>,
+          action : ContactDetails,
+
         },
       ]
 

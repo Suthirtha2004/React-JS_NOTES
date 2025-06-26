@@ -1,9 +1,8 @@
-import { useLoaderData } from "react-router-dom"
+import { useLoaderData, useParams } from "react-router-dom"
 import { Cards } from "../Components/Ui/Cards";
 export const Skills = () =>{
     const skillsData = useLoaderData();
     console.log(skillsData);
-
     return(
         <>
         <div>
