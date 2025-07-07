@@ -7,6 +7,7 @@ import { Form } from "./FormPost";
 export const Posts = () =>{
 
     const [data,setData] = useState([]);
+    const [updateData , setupdateData] =useState({});
 
     const getPostMethod = async() =>{
         try{
@@ -33,6 +34,8 @@ export const Posts = () =>{
         }
     }
 
+    const handleUpdatePost = (currElement)=>setupdateData(currElement);
+
     useEffect(()=>{
         getPostMethod();
     },[]);
@@ -41,8 +44,8 @@ export const Posts = () =>{
    
     return(
         <>
-       <section class="add-post-section">
-          <Form data={data} setData={setData}/>
+       <section className="add-post-section">
+          <Form data={data} setData={setData} updateData={updateData} setupdateData={setupdateData}/>
         </section>
 
         <section className="posts-section">
@@ -54,7 +57,7 @@ export const Posts = () =>{
                             <li className="post-card" key={id} >
                                 <p className="post-title">Title : {title}</p>
                                 <p className="post-body">Body : {body}</p>
-                                <button className="edit-btn">Edit</button>
+                                <button className="edit-btn" onClick={()=>handleUpdatePost(currElement)}>Edit</button>
                                 <button className="delete-btn" onClick={()=>handleDeletebutton(id)}>Delete</button>
                             </li>
                         )

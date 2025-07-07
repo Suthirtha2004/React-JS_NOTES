@@ -1,7 +1,7 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Addpostmethod } from "../api/PostApi";
 
-export const Form = ({ data, setData }) => {
+export const Form = ({ data, setData,updateData,setupdateData }) => {
   const [addData, setAddData] = useState({
     title: "",
     body: "",
@@ -27,6 +27,14 @@ export const Form = ({ data, setData }) => {
     }
   };
 
+  useEffect(()=>{
+    updateData &&
+    setAddData({
+        title : updateData.title || "",
+        body : updateData.body || "",
+    })
+  },[updateData]);
+
   const handleSubmitChange = (e) => {
     e.preventDefault();
     AddPost();
@@ -41,6 +49,7 @@ export const Form = ({ data, setData }) => {
         id="title"
         value={addData.title}
         onChange={handleInputChange}
+        autoComplete="off"
         placeholder="Enter post title"
       />
 
@@ -51,6 +60,7 @@ export const Form = ({ data, setData }) => {
         id="body"
         value={addData.body}
         onChange={handleInputChange}
+        autoComplete="off"
         placeholder="Enter post content"
       />
 
