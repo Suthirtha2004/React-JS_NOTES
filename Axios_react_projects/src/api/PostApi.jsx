@@ -18,3 +18,7 @@ export const Getmethod = () =>{
 export const GetDelete = (id) =>{
     return api.delete(`/posts/${id}`)
 }
+
+export const Addpostmethod = (post) =>{
+    return api.post('/posts',post)
+}

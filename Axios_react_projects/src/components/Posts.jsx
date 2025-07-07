@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { GetDelete, Getmethod } from "../api/PostApi"
 import "../App.css"
+import { Form } from "./FormPost";
 
 
 export const Posts = () =>{
@@ -41,13 +42,7 @@ export const Posts = () =>{
     return(
         <>
        <section class="add-post-section">
-        <label for="post-title">Add Title Here</label>
-        <input type="text" id="post-title" placeholder="Enter post title" />
-
-        <label for="post-body">Add Post</label>
-        <textarea id="post-body" rows="4" placeholder="Enter post content"></textarea>
-
-        <button class="add-post-btn">Add Post</button>
+          <Form data={data} setData={setData}/>
         </section>
 
         <section className="posts-section">
