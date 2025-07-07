@@ -85,3 +85,56 @@ body {
   background-color: #b91c1c; /* red-700 */
   transform: scale(1.03);
 }
+
+/* Label & Add Post Section */
+.add-post-section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 600px;
+  margin: 30px auto;
+  background-color: #fff;
+  padding: 20px 24px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.add-post-section label {
+  font-weight: 600;
+  font-size: 16px;
+  color: #111827; /* gray-900 */
+}
+
+.add-post-section input,
+.add-post-section textarea {
+  padding: 10px 12px;
+  font-size: 15px;
+  border: 1px solid #d1d5db; /* gray-300 */
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.add-post-section input:focus,
+.add-post-section textarea:focus {
+  border-color: #2563eb; /* blue-600 */
+}
+
+.add-post-btn {
+  align-self: flex-start;
+  padding: 10px 20px;
+  background-color: #10b981; /* green-500 */
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.add-post-btn:hover {
+  background-color: #059669; /* green-600 */
+  transform: scale(1.03);
+}
