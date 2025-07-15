@@ -22,3 +22,7 @@ export const GetDelete = (id) =>{
 export const Addpostmethod = (post) =>{
     return api.post('/posts',post)
 }
+
+export const UpdatePostMethod = (id, post) => {
+    return api.put(`/posts/${id}`, post);
+}
